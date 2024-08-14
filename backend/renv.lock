@@ -259,6 +259,16 @@
         "jsonlite"
       ],
       "Hash": "6a7f2a3084c7249d2f1466d6e4cc2e84"
+    },
+    "yyjsonr": {
+      "Package": "yyjsonr",
+      "Version": "0.1.20",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "09c908729f70276eaa96f32e9f7f09cc"
     }
   }
 }
