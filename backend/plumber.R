@@ -3,11 +3,14 @@
 ##import custom yyjsonr serialiser 
 source("./utils/yyjsonr_serialiser.R")
 
-#* Echo back the input
-#* @param msg The message to echo
-#* @get /
+#* static files
+#* @assets ./dist /
+list()
+
+#* api root
+#* @get /api
 #* @serializer yyjsonr
 #* 
-function(msg="") {
-  list("Welcome to root")
+function() {
+  list("Welcome to API root")
 }
