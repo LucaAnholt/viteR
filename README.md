@@ -41,3 +41,30 @@ npm start
 The frontend static files are built and transpiled by `Vite` and are then copied over to the `/dist` directory in the `/backend`. These are then picked up by the plumber API and served at the root endpoint `"/"`. 
 
 The actual API endpoints that are used by the client/frontend will exist within `/api/<endpoint>` - this means we can deploy our frontend from within our server deployment. 
+
+We can mimic this within development by using the `Vite` HTTP proxy in `vite.config.ts`: 
+```
+import { defineConfig } from "vitest/config"
+import react from "@vitejs/plugin-react"
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    open: true,
+    proxy: {
+      "/api": {
+        target: 'http://127.0.0.1:8080',
+        changeOrigin: true,
+      }
+    }
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "src/setupTests",
+    mockReset: true,
+  },
+})
+```
+
