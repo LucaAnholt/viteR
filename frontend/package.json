@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port=3000",
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && cp dist/* -r '../backend/dist'",
     "preview": "vite preview",
     "test": "vitest run",
     "format": "prettier --write .",
